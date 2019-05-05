@@ -8,12 +8,17 @@
         <category>web前端</category>
       </categories>
       <tags>
-        <tag>-作业</tag>
+        <tag>其他</tag>
+        <tag>作业</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[my blog]]></title>
     <url>%2F2019%2F03%2F18%2Fmy-blog%2F</url>
     <content type="text"><![CDATA[MY BLOG for mac. Because i change a new comouter os is macos ,I transform my blog in my new computer ,the article is test my new blog. Thanks.]]></content>
+      <tags>
+        <tag>说明</tag>
+        <tag>其他</tag>
+      </tags>
   </entry>
 </search>
