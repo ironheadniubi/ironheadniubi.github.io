@@ -15,7 +15,7 @@
   <entry>
     <title><![CDATA[my blog]]></title>
     <url>%2F2019%2F03%2F18%2Fmy-blog%2F</url>
-    <content type="text"><![CDATA[# The new BlogHello world]]></content>
+    <content type="text"><![CDATA[## Hello world]]></content>
       <tags>
         <tag>说明</tag>
         <tag>其他</tag>
