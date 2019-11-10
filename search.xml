@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数据分析课程实验]]></title>
+    <url>%2F2019%2F11%2F10%2F%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C%2F</url>
+    <content type="text"><![CDATA[哈哈哈，实验太无聊了，写写blog，记录无聊的数据挖掘实验课程。我是分割线线线线 第二章实验：实验环境：python3.7，pycharm所有代码和数据放在我的github里面：github 实验一：用冒泡排序实现排序代码123456789def maopao(mylist): for i in range(0,len(mylist)-1): for j in range(0,len(mylist)-i-1): if mylist[j]&gt;mylist[j+1]: mylist[j],mylist[j+1]=mylist[j+1],mylist[j] return mylistSList = [5,6,3,4,8,1,9,0,2]print(maopao(SList))]]></content>
+      <categories>
+        <category>作业</category>
+      </categories>
+      <tags>
+        <tag>作业</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Test my Blog]]></title>
     <url>%2F2019%2F05%2F05%2F%E5%BC%A0%E6%98%8E%E8%A5%BF%E5%A4%A7%E4%BD%9C%E4%B8%9A%2F</url>
     <content type="text"><![CDATA[Markdown基本语法markdown是一种可以是普通文本编辑器编写的标记语言。 这是一个段落 这是斜体这是粗体这是粗斜体 H2 this is first level of quoting this is nested blockquote 这是代码区域：123456#include&lt;iostream&gt;using namespace std;int main()&#123;cout&lt;&lt;&quot;shaoshilin&quot;;return 0;&#125;]]></content>
