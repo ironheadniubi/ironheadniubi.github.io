@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Regular Expression]]></title>
-    <url>%2F2019%2F11%2F19%2FRegular-Expression%2F</url>
-    <content type="text"><![CDATA[正则表达式，查找符合规则的字符串，正则表达式就是用于描述这些规则的工具行定位符1.用来描述字符串的边界，”^” 表示行的开始，”$”表示行的结尾]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>re</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[色彩学作业]]></title>
     <url>%2F2019%2F11%2F11%2F%E8%89%B2%E5%BD%A9%E5%AD%A6%E4%BD%9C%E4%B8%9A%2F</url>
     <content type="text"><![CDATA[色彩学实验一：颜色三刺激值的计算三刺激值的概念：混色系统是根据色度学的理论和实验证明任何色彩都可以有色光的三原色混合得到而建立的。色度三原色是红、绿、蓝。利用红、绿、蓝三色光可以混合匹配出任何想要的颜色，对于物体的表面色，需要用仪器测定其所反射或者投射的三原色光的数量，此三原色色光的作用量成为色彩的三刺激值。 CIE 1931 RGB 表色系统： 由于外界的光辐射作用于人厌，因而产生颜色的感觉，这说明，物体的颜色既取决于物理刺激，又取决于人眼的特性。为了定量的表示颜色，于是有了“标准色度观察者”又称全部的光谱三刺激值 色度坐标的概念：在色度学体系中，不直接用三刺激值来表示颜色，而是用三原色个字在三原色总量（R+G+B）中的比例来表示颜色，相对比例叫做色度坐标。 CIE 1931 XYZ 系统的建立在CIE1931RGB色度系统中计算颜色的三刺激值时会出现负值，给工业带来了不便，因此有了CIE 1931 XYZ表色系统 XYZ系统与RGB系统的色标转换关系为： CIE 1964 XYZ 补充色度学表色系统：人眼观察物体细节时的分辨力与观察时的视场大小有关，CIE 1931XYZ系统时在2°视场下的实验结果，适用于&lt;4°的视场范围，CIE 1964 补充色度学系统为在10°视场下的表色系统 物体颜色三刺激值的计算计算步骤： 确定光源及其相对光谱能量分布，物体表面颜色受照射光源能量分布的影响，因此，在测量物体表面时要确定其光源，如CIE 标准光源A、B、C、D50、D65等 确定颜色的刺激φ(λ)对于光源色： φ(λ) = S(λ)对于物体色： φ(λ) = S(λ)R(λ) 物体为反射物体时R(λ)为物体光谱反射率ρ(λ)。R(λ)=ρ(λ)。当物体为透射物体时R(λ)为光谱透射率 即R(λ)=τ(λ) 确定标准观察者视场等大小 计算公式： 计算在光源D50 2°视场下的三刺激值 数据代码放在我的github里面123456789101112131415161718192021import xlrd # 导入处理excel的库book = xlrd.open_workbook('反射率.xlsx') #打开反射率表格book1 = xlrd.open_workbook("相对光谱率分布.xlsx") #打开相对光谱率分布表格sheet = book1.sheet_by_index(0) #读取相对光谱率分布表格的第一个sheetsheet1 = book.sheet_by_index(0) # 读取反射率表格的第一个sheetans = 0for i in range(0,len(sheet.col_values(2))): ans=ans+(sheet.col_values(2)[i]*sheet.col_values(4)[i])# Y = K*s(r)*y(r) 求积分相加的形式k = 100 / ans # Y=100 求KX = 0Y = 0Z = 0for i in range(0,len(sheet1.col_values(0))): X = X+(sheet.col_values(4)[i]*sheet.col_values(1)[i]*sheet1.col_values(1)[i]) Y = Y+(sheet.col_values(4)[i]*sheet.col_values(2)[i]*sheet1.col_values(1)[i]) Z = Z+(sheet.col_values(4)[i]*sheet.col_values(3)[i]*sheet1.col_values(1)[i])X = X * kY = Y * kZ = Z * kprint(X,Y,Z) 色彩学实验二：验证中国颜色体系的均匀性Yxy表色方法未完待续！！！]]></content>
@@ -25,8 +13,8 @@
         <category>作业</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>作业</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
