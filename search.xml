@@ -15,7 +15,7 @@
   <entry>
     <title><![CDATA[TextRank大作业]]></title>
     <url>%2F2019%2F11%2F23%2FTextRank%E5%A4%A7%E4%BD%9C%E4%B8%9A%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[{{message}} {{content}}]]></content>
   </entry>
   <entry>
     <title><![CDATA[数据分析考试]]></title>
