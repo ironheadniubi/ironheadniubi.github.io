@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="作业,textrank,">
 
 
 
@@ -86,17 +86,18 @@
 
 
 
-<meta name="description" content="内容已经加密，请输入密码后阅读！">
+<meta name="description" content="代码复现过程build Undirectetweighted Graph123456789101112131415161718192021222324252627282930313233343536373839404142434445from collections import defaultdictfrom jieba.analyse.tfidf import KeywordExtractor">
+<meta name="keywords" content="作业,textrank">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TextRank大作业">
 <meta property="og:url" content="http://yoursite.com/2019/11/23/TextRank大作业/index.html">
 <meta property="og:site_name" content="usstssl&#39;s Blog">
-<meta property="og:description" content="内容已经加密，请输入密码后阅读！">
+<meta property="og:description" content="代码复现过程build Undirectetweighted Graph123456789101112131415161718192021222324252627282930313233343536373839404142434445from collections import defaultdictfrom jieba.analyse.tfidf import KeywordExtractor">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-03T14:14:07.037Z">
+<meta property="og:updated_time" content="2019-12-03T14:26:40.918Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TextRank大作业">
-<meta name="twitter:description" content="内容已经加密，请输入密码后阅读！">
+<meta name="twitter:description" content="代码复现过程build Undirectetweighted Graph123456789101112131415161718192021222324252627282930313233343536373839404142434445from collections import defaultdictfrom jieba.analyse.tfidf import KeywordExtractor">
 
 
 
@@ -343,6 +344,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/作业/" itemprop="url" rel="index">
+                    <span itemprop="name">作业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -375,7 +398,9 @@
       
 
       
-        <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <div id="security"> <div class="input-container"> <input type="password" class="form-control" id="pass" placeholder=" {{message}} "> <label for="pass"> {{message}} </label> <div class="bottom-line"></div> </div> </div> <div id="encrypt-blog" style="display:none"> {{content}} </div><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+        <h1 id="代码复现过程"><a href="#代码复现过程" class="headerlink" title="代码复现过程"></a>代码复现过程</h1><h2 id="build-Undirectetweighted-Graph"><a href="#build-Undirectetweighted-Graph" class="headerlink" title="build Undirectetweighted Graph"></a>build Undirectetweighted Graph</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"><span class="keyword">from</span> jieba.analyse.tfidf <span class="keyword">import</span> KeywordExtractor</span><br><span class="line"><span class="keyword">import</span> jieba.posseg</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UndirectWeightedGraph</span>:</span></span><br><span class="line">    d = <span class="number">0.85</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.graph = defaultdict(list)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addEdge</span><span class="params">(self,start,end,weight)</span>:</span></span><br><span class="line">        <span class="comment"># use a tuple(start,end,weight) instead of a Edge object</span></span><br><span class="line">        self.graph[start].append((start,end,weight))</span><br><span class="line">        self.graph[end].append((end,start,weight))</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rank</span><span class="params">(self)</span>:</span></span><br><span class="line">        ws = defaultdict(float)</span><br><span class="line">        outSum = defaultdict(float)</span><br><span class="line">        wsdef = <span class="number">1.0</span>/(len(self.graph) <span class="keyword">or</span> <span class="number">1.0</span>)</span><br><span class="line">        <span class="keyword">for</span> n,out <span class="keyword">in</span> self.graph.items():</span><br><span class="line">            ws[n]=wsdef</span><br><span class="line">            <span class="keyword">for</span> e <span class="keyword">in</span> out:</span><br><span class="line">                outSum[n]=sum((e[<span class="number">2</span>] <span class="keyword">for</span> e <span class="keyword">in</span> out),<span class="number">0.0</span>)</span><br><span class="line">        <span class="comment"># this line for build stable iteration</span></span><br><span class="line">        sorted_keys=sorted(self.graph.keys())</span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">            <span class="keyword">for</span> n <span class="keyword">in</span> sorted_keys:</span><br><span class="line">                s = <span class="number">0</span></span><br><span class="line">                <span class="keyword">for</span> e <span class="keyword">in</span> self.graph[n]:</span><br><span class="line">                    s += (e[<span class="number">2</span>]*ws[e[<span class="number">1</span>]])/(outSum[e[<span class="number">1</span>]])</span><br><span class="line">                ws[n]=(<span class="number">1</span>-self.d)+self.d*s</span><br><span class="line">        (min_rank,max_rank) = (sys.float_info[<span class="number">0</span>],sys.float_info[<span class="number">3</span>])</span><br><span class="line">       <span class="comment"># print(min_rank,max_rank)</span></span><br><span class="line">        <span class="keyword">for</span> w <span class="keyword">in</span> ws.values():</span><br><span class="line">            <span class="keyword">if</span> w&lt;min_rank:</span><br><span class="line">                min_rank = w</span><br><span class="line">            <span class="keyword">if</span> w&gt;max_rank:</span><br><span class="line">                max_rank = w</span><br><span class="line">        <span class="keyword">for</span> n,w <span class="keyword">in</span> ws.items():</span><br><span class="line">            <span class="comment"># we can also choose *100 but this way is better</span></span><br><span class="line">            ws[n]=(w-min_rank/<span class="number">10.0</span>)/(max_rank-min_rank/<span class="number">10.0</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ws</span><br><span class="line"><span class="comment"># g = UndirectWeightedGraph()</span></span><br><span class="line"><span class="comment"># g.addEdge('a','b',3)</span></span><br><span class="line"><span class="comment"># g.addEdge('a','c',2)</span></span><br><span class="line"><span class="comment"># g.rank()</span></span><br></pre></td></tr></table></figure>
+<h2 id="rank-for-text"><a href="#rank-for-text" class="headerlink" title="rank for text"></a>rank for text</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TextRank</span><span class="params">(KeywordExtractor)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.tokenizer = self.postokenizer=jieba.posseg.dt</span><br><span class="line">        self.stop_words = self.STOP_WORDS.copy()</span><br><span class="line">       <span class="comment"># print(self.stop_words)</span></span><br><span class="line">        self.pos_filt = frozenset((<span class="string">'ns'</span>,<span class="string">'n'</span>,<span class="string">'vn'</span>,<span class="string">'v'</span>))</span><br><span class="line">        self.span = <span class="number">5</span></span><br><span class="line">    <span class="comment">#get 名词,动词,名动词,地名</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pairfilter</span><span class="params">(self,wp)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> (wp.flag <span class="keyword">in</span> self.pos_filt <span class="keyword">and</span> len(wp.word.strip())&gt;=<span class="number">2</span> <span class="keyword">and</span> wp.word.lower() <span class="keyword">not</span> <span class="keyword">in</span> self.stop_words)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">textrank</span><span class="params">(self, sentence, topK=<span class="number">20</span>, withWeight=False, allowPOS=<span class="params">(<span class="string">'ns'</span>, <span class="string">'n'</span>, <span class="string">'vn'</span>, <span class="string">'v'</span>)</span>, withFlag=False)</span>:</span></span><br><span class="line">        self.pos_filt = frozenset(allowPOS)</span><br><span class="line">        g=UndirectWeightedGraph()</span><br><span class="line">        cm = defaultdict(int)</span><br><span class="line">        words = tuple(self.tokenizer.cut(sentence))</span><br><span class="line">        <span class="comment">#print(type(words))</span></span><br><span class="line">        <span class="comment">#print(type(words[0]))</span></span><br><span class="line">        <span class="keyword">for</span> i,wp <span class="keyword">in</span> enumerate(words):</span><br><span class="line">            <span class="keyword">if</span> self.pairfilter(wp):</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>,i+self.span):</span><br><span class="line">                    <span class="keyword">if</span> j&gt;=len(words):</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">                    <span class="keyword">if</span> <span class="keyword">not</span> self.pairfilter(words[j]):</span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                    <span class="keyword">if</span> allowPOS <span class="keyword">and</span> withFlag:</span><br><span class="line">                        cm[(wp,words[j])]+=<span class="number">1</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        cm[(wp.word,words[j].word)]+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> terms,w <span class="keyword">in</span> cm.items():</span><br><span class="line">            g.addEdge(terms[<span class="number">0</span>],terms[<span class="number">1</span>],w)</span><br><span class="line">        nodes_rank = g.rank()</span><br><span class="line">      <span class="comment">#  print(nodes_rank.items())</span></span><br><span class="line">        <span class="keyword">if</span> withWeight:</span><br><span class="line">            tags = sorted(nodes_rank.items(),key=itemgetter(<span class="number">1</span>),reverse=<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            tags = sorted(nodes_rank,key=nodes_rank.__getitem__,reverse=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> topK:</span><br><span class="line">            <span class="keyword">return</span>  tags[:topK]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> tags</span><br><span class="line">f = open(<span class="string">'test.txt'</span>,encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">s = f.read()</span><br><span class="line">ans = TextRank()</span><br><span class="line">print(ans.textrank(s,topK=<span class="number">20</span>,withWeight=<span class="literal">True</span>,allowPOS=(<span class="string">'ns'</span>,<span class="string">'v'</span>,<span class="string">'vn'</span>,<span class="string">'n'</span>),withFlag=<span class="literal">True</span>))</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -398,6 +423,14 @@
         
       </div>
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/作业/" rel="tag"># 作业</a>
+          
+            <a href="/tags/textrank/" rel="tag"># textrank</a>
+          
+        </div>
       
 
       
@@ -472,8 +505,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -512,7 +554,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -552,6 +594,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码复现过程"><span class="nav-number">1.</span> <span class="nav-text">代码复现过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#build-Undirectetweighted-Graph"><span class="nav-number">1.1.</span> <span class="nav-text">build Undirectetweighted Graph</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rank-for-text"><span class="nav-number">1.2.</span> <span class="nav-text">rank for text</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -567,7 +625,7 @@
       <div class="footer-inner">
         <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.7k字</span>
+  <span class="post-count">博客全站共4.1k字</span>
 </div>
 
 
